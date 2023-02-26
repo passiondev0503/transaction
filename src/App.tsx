@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
-import Title from './layouts/Header';
 import Body from './layouts/Content';
 import Result from './layouts/Result';
-// import DataTable from './layouts/Footer';
 
 import { Layout } from 'antd';
 import { Routes, Route } from 'react-router-dom';
@@ -28,7 +26,7 @@ const App: React.FC = () => (
         element={
           <Layout style={{ minHeight: '100vh' }}>
             <Header style={headerStyle}>
-              <Title />
+              <h1>Transaction Analyzer</h1>
             </Header>
             <Content>
               <Body />

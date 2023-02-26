@@ -35,8 +35,48 @@ const Content: React.FC = () => {
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
   const [confirmRetailer, setConfirmRetailer] = useState('');
-  console.log('::::::::', defaultData);
-  const [dataSource, setDataSource] = useState<DataType[]>([]);
+  const [dataSource, setDataSource] = useState<DataType[]>([
+    {
+      key: '1',
+      id: 'WLMFRDGD',
+      date: '20/08/2018 12:45:33',
+      dateDisplay: '20/08/2018 12:45:33',
+      amount: 59.99,
+      retailer: 'Kwik-E-Mart',
+    },
+    {
+      key: '2',
+      id: 'WLMFRDGD',
+      date: '20/08/2018 12:45:33',
+      dateDisplay: '20/08/2018 12:45:33',
+      amount: 59.99,
+      retailer: 'Kwik-E-Mart',
+    },
+    {
+      key: '3',
+      id: 'WLMFRDGD',
+      date: '20/08/2018 12:45:33',
+      dateDisplay: '20/08/2018 12:45:33',
+      amount: 59.99,
+      retailer: 'Kwik-E-Mart',
+    },
+    {
+      key: '4',
+      id: 'WLMFRDGD',
+      date: '20/08/2018 12:45:33',
+      dateDisplay: '20/08/2018 12:45:33',
+      amount: 59.99,
+      retailer: 'Kwik-E-Mart',
+    },
+    {
+      key: '5',
+      id: 'WLMFRDGD',
+      date: '20/08/2018 12:45:33',
+      dateDisplay: '20/08/2018 12:45:33',
+      amount: 59.99,
+      retailer: 'Kwik-E-Mart',
+    },
+  ]);
 
   const onFinish = (values: any) => {
     const { id, date, amount, retailer } = values;
@@ -52,13 +92,10 @@ const Content: React.FC = () => {
     setDataSource([...dataSource, newData]);
     setKey(key + 1);
   };
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
+  const onFinishFailed = (errorInfo: any) => {};
   const handleExport = () => {
     let num = 0;
     let averageValue = 0;
-    console.log('TableData:', dataSource);
 
     dataSource.map((value, index) => {
       if (
@@ -70,12 +107,8 @@ const Content: React.FC = () => {
         averageValue += value.amount;
       }
     });
-    console.log('num:', num);
-    console.log('averageValue:', averageValue / num);
     // setCount(num);
     // setAverage(averageValue / num + (averageValue % num) / 10);
-    console.log('Export button clicked!!!');
-    // console.log(count);
     dispatch(
       result({
         dataSource: dataSource,
@@ -203,7 +236,7 @@ const Content: React.FC = () => {
             dataSource={dataSource}
             columns={columns}
             bordered
-            pagination={false}
+            pagination={{ pageSize: 10 }}
           />
         </Col>
       </Row>
