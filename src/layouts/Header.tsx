@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'antd';
 
 const Header: React.FC = () => {
   return (
