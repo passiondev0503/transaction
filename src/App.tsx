@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Body from './layouts/Content';
-import Result from './layouts/Result';
+import Body from './pages/Content';
+import Result from './pages/Result';
 
 import { Layout } from 'antd';
 import { Routes, Route } from 'react-router-dom';
